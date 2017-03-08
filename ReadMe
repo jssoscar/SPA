@@ -56,3 +56,5 @@ SPA.on(type, callback)
  * 获取公用baseUrl 
  */
 SPA.getBaseUrl() : 获取当前config的baseUrl
+
+
