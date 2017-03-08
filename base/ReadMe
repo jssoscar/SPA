@@ -1,0 +1,58 @@
+
+====== SPA配置参数 ======
+
+selector : 需要SPA处理的元素，默认是a,
+container : SPA主视图的容器,
+attribute : 设置是否需要SPA拦截点击处理，默认是data-spa属性,
+events : { SPA加载事件
+    "load" : 开始加载事件,
+    "rendered" : 渲染完成事件,
+    "leave" : 离开页面,
+    "error" : 加载失败,
+    "iframeerror" : iframe加载失败
+},
+defaultView : 默认视图区域,
+defaultControlelr : 默认视图的controller,
+ignoreSameUrl : 是否忽略相同url，默认为true,
+controllerRoot : controller加载根路径,
+controllerName : controller主文件名,
+main : controller默认执行的方法，根据module.exports来执行。优先级function - controllername,
+effectClass : 页面切换时的效果
+iframe : {
+    iframeable : 是否支持iframe方式,
+    container : iframe视图的容器,
+    iframeSign : iframe模块的标识
+}
+
+
+====== SPA公用方法 ======
+
+/**
+ * 更新当前SPA视图区域
+ * 
+ * template : 视图，更新主视图
+ *
+ * title : 视图title，更新document.title
+ */
+SPA.update(template, title)
+
+/**
+ * 获取当前module 
+ */
+SPA.module()
+
+
+/**
+ * SPA单页事件 
+ *
+ * type : 事件类型，现在只有leave事件
+ * 
+ * callback : callback
+ */
+SPA.on(type, callback)
+
+
+/**
+ * 获取公用baseUrl 
+ */
+SPA.getBaseUrl() : 获取当前config的baseUrl
